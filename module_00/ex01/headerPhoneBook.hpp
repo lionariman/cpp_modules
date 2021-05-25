@@ -44,5 +44,7 @@ class Contact
 };
 
 void	printMessage(int field_counter);
+void	announce(std::string message);
+int		checkDigits(int counter);
 
 #endif
