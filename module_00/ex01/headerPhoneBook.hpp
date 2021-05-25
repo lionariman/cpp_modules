@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <string>
 
 # define FIRST_NAME 1
 # define LAST_NAME 2
