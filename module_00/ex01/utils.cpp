@@ -1,6 +1,6 @@
-#include "headerPhoneBook.hpp"
+#include "PhoneBook.hpp"
 
-void	Contact::addValue(std::string value, int numOfValue)
+void	PhoneBook::addValue(std::string value, int numOfValue)
 {
 	if (numOfValue == FIRST_NAME)
 		this->firstName = value;
@@ -26,27 +26,27 @@ void	Contact::addValue(std::string value, int numOfValue)
 		this->darkestSecret = value;
 }
 
-int	Contact::getIndex(void)
+int	PhoneBook::getIndex(void)
 {
 	return this->index;
 }
 
-std::string	Contact::getFirstName(void)
+std::string	PhoneBook::getFirstName(void)
 {
 	return this->firstName;
 }
 
-std::string	Contact::getLastName(void)
+std::string	PhoneBook::getLastName(void)
 {
 	return this->lastName;
 }
 
-std::string	Contact::getNickname(void)
+std::string	PhoneBook::getNickname(void)
 {
 	return this->nickname;
 }
 
-void	Contact::setIndex(int index)
+void	PhoneBook::setIndex(int index)
 {
 	this->index = index;
 }
@@ -77,7 +77,7 @@ void	printMessage(int field_counter)
 		std::cout << " ... darkest secret: ";
 }
 
-void	Contact::printContactInfo(void)
+void	PhoneBook::printContactInfo(void)
 {
 	std::cout << " ....... first name: " + this->firstName + "\n"
 				 " ........ last name: " + this->lastName + "\n"

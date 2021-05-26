@@ -1,4 +1,4 @@
-#include "headerPhoneBook.hpp"
+#include "PhoneBook.hpp"
 
 int		main(void)
 {
@@ -8,8 +8,8 @@ int		main(void)
 
 	std::cout << "\n***** PHONE BOOK *****\n" << std::endl;
 
-	int		counter(0);
-	Contact contact[8];
+	int			counter(0);
+	PhoneBook	contact[8];
 	while (status)
 	{
 		announce("| >> ADD | SEARCH | EXIT << |");

@@ -3,8 +3,7 @@ NAME = phonebook
 CC = clang++
 FL = -Wall -Wextra -Werror
 
-SRCS =	PhoneBook.cpp \
-		utils.cpp
+SRCS =	PhoneBook.cpp utils.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
