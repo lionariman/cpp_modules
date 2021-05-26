@@ -2,7 +2,13 @@
 
 Pony::Pony()
 {
-	std::cout << "Pony is builded" << std::endl;
+	std::cout << GREEN << "\nPony is builded" << GREEN << std::endl;
+}
+
+Pony::~Pony()
+{
+	std::cout << GREEN << "\n" + this->getPonyName() +
+				" is destroyed" << GREEN << std::endl;
 }
 
 void Pony::setPonyData(int age, std::string name,
@@ -32,9 +38,4 @@ std::string	Pony::getPonyColor(void)
 std::string	Pony::getPonyFavoriteFood(void)
 {
 	return this->favoriteFood;
-}
-
-Pony::~Pony()
-{
-	std::cout << getPonyName() + " is destroyed" << std::endl;
 }
