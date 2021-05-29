@@ -1,9 +1,9 @@
-NAME = ex07
+NAME = replacer
 
 CC = clang++
 FL = -Wall -Wextra -Werror
 
-SRCS =	main.cpp
+SRCS =	main.cpp Replace.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
