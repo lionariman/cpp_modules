@@ -65,8 +65,6 @@ void	checkLoop(void)
 	std::cout << std::endl;
 }
 
-
-
 void	replacing(Replace &replacer)
 {
 	std::ofstream createFile;
@@ -77,9 +75,11 @@ void	replacing(Replace &replacer)
 	std::size_t found;
 
 	if (!inputFile.is_open())
+	{
 		createFile.open(replacer.getName(), std::ofstream::app);
 		if (!createFile.is_open())
 			errorExit("cannot create a file", replacer.getName());
+	}
 	inputFile.open(replacer.getName());
 	if (!inputFile.is_open())
 		errorExit("cannot open an input file", replacer.getName());
@@ -94,15 +94,13 @@ void	replacing(Replace &replacer)
 		if (found == string::npos)
 			break ;
 		line.replace(found, replacer.getS1().length(), replacer.getS2());
-		found += replacer.getS1().length();
+		found += replacer.getS2().length();
 	}
 	outputFile << line;
 	createFile.close();
 	outputFile.close();
 	inputFile.close();
 }
-
-
 
 int	main(void)
 {
