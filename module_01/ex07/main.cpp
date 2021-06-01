@@ -17,6 +17,9 @@ void	setFilename(Replace &replacer)
 
 	std::cout << CYAN << "Enter a filename: " << CYAN;
 	std::getline(std::cin, command);
+	for (int i(0); i < (int)command.length(); i++)
+		if (!std::isalpha(command[i]))
+			errorExit("there is a wrong char in the file name", command);
 	replacer.setName(command);
 }
 
@@ -26,6 +29,9 @@ void	setSubstituteString(Replace &repalcer)
 
 	std::cout << CYAN << "Enter an s1: " << CYAN;
 	std::getline(std::cin, command);
+	for (int i(0); i < (int)command.length(); i++)
+		if (!std::isalpha(command[i]))
+			errorExit("there is a wrong char in the s1", command);
 	repalcer.setS1(command);
 }
 
@@ -35,6 +41,9 @@ void	setReplaciableString(Replace &repalcer)
 
 	std::cout << CYAN << "Enter an s2: " << CYAN;
 	std::getline(std::cin, command);
+	for (int i(0); i < (int)command.length(); i++)
+		if (!std::isalpha(command[i]))
+			errorExit("there is a wrong char in the s2", command);
 	repalcer.setS2(command);
 }
 
@@ -72,7 +81,7 @@ void	replacing(Replace &replacer)
 	std::ifstream inputFile;
 	char ch;
 	string line;
-	std::size_t found;
+	size_t	found(0);
 
 	if (!inputFile.is_open())
 	{
@@ -88,13 +97,15 @@ void	replacing(Replace &replacer)
 		errorExit("cannot create an output file", replacer.getName());
 	while (inputFile.get(ch))
 		line += ch;
+	found = line.find(replacer.getS1());
+	if (found == line.npos)
+		return ;
 	while (true)
 	{
-		found = line.find(replacer.getS1());
-		if (found == string::npos)
+		if (found == line.npos)
 			break ;
 		line.replace(found, replacer.getS1().length(), replacer.getS2());
-		found += replacer.getS2().length();
+		found = line.find(replacer.getS1(), found + replacer.getS2().length());
 	}
 	outputFile << line;
 	createFile.close();
