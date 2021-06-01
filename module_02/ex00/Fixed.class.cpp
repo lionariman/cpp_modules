@@ -14,15 +14,15 @@ Fixed::~Fixed()
 // a copy constructor
 Fixed::Fixed(const Fixed &oldInstance)
 {
-	this->fixedPointValue = oldInstance.fixedPointValue;
 	std::cout << GREEN << "Copy constructor called" << GREEN << std::endl;
+	this->fixedPointValue = oldInstance.getRawBits();
 }
 
 // an assignation operator overload
 Fixed	&Fixed::operator=(const Fixed &oldInstance)
 {
-	this->fixedPointValue = oldInstance.fixedPointValue;
 	std::cout << GREEN << "Assignation operator called" << GREEN << std::endl;
+	this->fixedPointValue = oldInstance.getRawBits();
 	return *this;
 }
 
@@ -34,5 +34,6 @@ int Fixed::getRawBits(void) const
 
 void    Fixed::setRawBits(const int raw)
 {
+	std::cout << BLUE << "setRawBits member function called" << BLUE << std::endl;
 	this->fixedPointValue = raw;
 }
