@@ -6,12 +6,12 @@
 class Human
 {
 	private:
-		Brain	*brain;
+		Brain	brain;
 
 	public:
 		Human();
 		~Human();
-		Brain	*getBrain(void);
+		Brain	&getBrain(void);
 		std::string	identify(void);
 };
 
