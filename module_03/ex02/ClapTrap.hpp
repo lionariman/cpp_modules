@@ -43,13 +43,7 @@ class ClapTrap
 		// ========= getters =========
 		std::string getName(void);
 		int getHitPoints(void);
-		// int getMaxHitPoints(void);
 		int getEnergyPoints(void);
-		// int getMaxEnergyPoints(void);
-		// int getLevel(void);
-		// int getMeleeAttackDamage(void);
-		// int getRangedAttackDamage(void);
-		// int getArmorDamageReduction(void);
 		// ========= getters =========
 
 		// ========= setters =========

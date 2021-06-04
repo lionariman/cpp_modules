@@ -83,13 +83,13 @@ void ClapTrap::setName(std::string value) {
 // ========================= setters ===========================
 
 void ClapTrap::rangedAttack(std::string const &target) {
-	std::cout << CYAN << "FR4G-TP " + this->name + " attacks " +
+	std::cout << CYAN << "CL4P-TP " + this->name + " attacks " +
 	target + " at range, causing " << this->rangedAttackDamage
 	<< " points of damage!" << CYAN << std::endl;
 }
 
 void ClapTrap::meleeAttack(std::string const &target) {
-	std::cout << CYAN << "FR4G-TP " + this->name + " attacks " +
+	std::cout << CYAN << "CL4P-TP " + this->name + " attacks " +
 	target + " at melee, causing " << this->meleeAttackDamage
 	<< " points of damage!" << CYAN << std::endl;
 }
