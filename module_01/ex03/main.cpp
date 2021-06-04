@@ -11,7 +11,7 @@ int	main(void)
 	const int	numOfZombies = 10;
 
 	// first step: we should create N number of zombies
-	ZombieHorde horde = ZombieHorde(numOfZombies);
+	ZombieHorde horde(numOfZombies);
 
 	// assign the pointer of ZombieHorde to zombies
 	Zombie *zombies;
