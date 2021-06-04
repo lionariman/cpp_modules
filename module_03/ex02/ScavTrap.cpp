@@ -1,15 +1,15 @@
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-FragTrap::FragTrap() {}
+ScavTrap::ScavTrap() {}
 
-FragTrap::FragTrap(std::string name) {
+ScavTrap::ScavTrap(std::string name) {
 	this->name = name;
 
 	const int length(3);
 	std::string msgs[length] = {
-		" was created from scrap metal",
-		" was assembled at the factory",
-		" was created by the leader of the machines"
+		" was just born",
+		" escaped from the factory",
+		" has been updated"
 	};
 
 	int index = std::rand() % length;
@@ -18,12 +18,12 @@ FragTrap::FragTrap(std::string name) {
 	this->setDefaultValues();
 }
 
-FragTrap::FragTrap(const FragTrap &fragTrapInstance) {
+ScavTrap::ScavTrap(const ScavTrap &fragTrapInstance) {
 	const int length(3);
 	std::string msgs[length] = {
-		" was created from scrap metal",
-		" was assembled at the factory",
-		" was created by the leader of the machines"
+		" was just born",
+		" escaped from the factory",
+		" has been updated"
 	};
 
 	int index = std::rand() % length;
@@ -32,12 +32,12 @@ FragTrap::FragTrap(const FragTrap &fragTrapInstance) {
 	*this = fragTrapInstance;
 }
 
-FragTrap::~FragTrap() {
+ScavTrap::~ScavTrap() {
 	const int length(3);
 	std::string msgs[length] = {
-		" was stricken with rust",
-		" had a system failure",
-		" was crushed by a meteorite"
+		" was destroyed by laser",
+		" lost his mind",
+		" was riddled with bullets"
 	};
 
 	int index = std::rand() % length;
@@ -45,13 +45,13 @@ FragTrap::~FragTrap() {
 	std::cout << RED << this->name << msgs[index] << RED << std::endl;
 }
 
-FragTrap &FragTrap::operator=(const FragTrap &fragTrapInstance) {
+ScavTrap &ScavTrap::operator=(const ScavTrap &fragTrapInstance) {
 	*this = fragTrapInstance;
 	return *this;
 }
 
 // set default parameter for each field exept name
-void FragTrap::setDefaultValues(void) {
+void ScavTrap::setDefaultValues(void) {
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
 	this->energyPoints = 100;
@@ -63,38 +63,38 @@ void FragTrap::setDefaultValues(void) {
 }
 
 // ========================= getters ===========================
-std::string FragTrap::getName(void) {
+std::string ScavTrap::getName(void) {
 	return this->name;
 }
 
-int FragTrap::getHitPoints(void) {
+int ScavTrap::getHitPoints(void) {
 	return this->hitPoints;
 }
 
-int FragTrap::getEnergyPoints(void) {
+int ScavTrap::getEnergyPoints(void) {
 	return this->energyPoints;
 }
 // ========================= getters ===========================
 
 // ========================= setters ===========================
-void FragTrap::setName(std::string value) {
+void ScavTrap::setName(std::string value) {
 	this->name = value;
 }
 // ========================= setters ===========================
 
-void FragTrap::rangedAttack(std::string const &target) {
-	std::cout << CYAN << "FR4G-TP " + this->name + " attacks " +
+void ScavTrap::rangedAttack(std::string const &target) {
+	std::cout << CYAN << "SC4V-TP " + this->name + " attacks " +
 	target + " at range, causing " << this->rangedAttackDamage
 	<< " points of damage!" << CYAN << std::endl;
 }
 
-void FragTrap::meleeAttack(std::string const &target) {
-	std::cout << CYAN << "FR4G-TP " + this->name + " attacks " +
+void ScavTrap::meleeAttack(std::string const &target) {
+	std::cout << CYAN << "SC4V-TP " + this->name + " attacks " +
 	target + " at melee, causing " << this->meleeAttackDamage
 	<< " points of damage!" << CYAN << std::endl;
 }
 
-void FragTrap::takeDamage(unsigned int amount) {
+void ScavTrap::takeDamage(unsigned int amount) {
 	this->hitPoints -= amount - this->armorDamageReduction;
 	if (this->hitPoints < 0) {
 		this->hitPoints = 0;
@@ -103,36 +103,25 @@ void FragTrap::takeDamage(unsigned int amount) {
 	<< amount << " points of damage" << std::endl;
 }
 
-void FragTrap::beRepaired(unsigned int amount) {
+void ScavTrap::beRepaired(unsigned int amount) {
 	this->hitPoints += amount;
 	if (this->hitPoints > this->maxEnergyPoints) {
 		amount -= this->hitPoints - this->maxHitPoints;
 		this->hitPoints = this->maxEnergyPoints;
 	}
-	std::cout << CYAN << this->name + " is repaired for "
-	<< amount << " hit points" << CYAN << std::endl;
+	std::cout << GREEN << this->name + " is repaired for "
+	<< amount << " hit points" << GREEN << std::endl;
 }
 
-void FragTrap::vaultHunterDotExe(std::string const &target) {
+void ScavTrap::challengeNewscomer() {
+	const int eventNum(10);
 
-	const int attackNum(10);
-
-	std::string typeOfAttacks[attackNum] = {
-		"'Nade out!", "Grenade!", "Grenaaaade!",
-		"Hot potato!", "Pull pin, throw!", "Take that!",
-		"Throwing grenade!", "Bad guy go boom!",
-		"Eat bomb, baddie!", "Present for you!"
+	std::string typeOfEvents[eventNum] = {
+		"We got a badass here!", "Badass on the way!", "Badass incoming!",
+		"Heads up! Incoming badass!", "Look out! Badass!", "Target acquired! It's a badass!",
+		"Badass! Lock 'n load!", "We've got a badass incoming!", "BADASS!", "Got a badass here!"
 	};
 
-	int randAttack = std::rand() % attackNum;
-
-	if (this->energyPoints >= 25) {
-		std::cout << GREEN << this->name + ": " + typeOfAttacks[randAttack] +
-		" for " + target << GREEN << std::endl;
-		this->energyPoints -= 25;
-		if (this->energyPoints < 0)
-			this->energyPoints = 0;
-	}
-	else
-		std::cout << PINK << this->name + " is out of energy" << PINK << std::endl;
+	int ev = std::rand() % eventNum;
+	std::cout << PINK << this->name + ": " + typeOfEvents[ev] << PINK << std::endl;
 }

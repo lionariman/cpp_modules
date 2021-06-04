@@ -109,8 +109,8 @@ void FragTrap::beRepaired(unsigned int amount) {
 		amount -= this->hitPoints - this->maxHitPoints;
 		this->hitPoints = this->maxEnergyPoints;
 	}
-	std::cout << CYAN << this->name + " is repaired for "
-	<< amount << " hit points" << CYAN << std::endl;
+	std::cout << GREEN << this->name + " is repaired for "
+	<< amount << " hit points" << GREEN << std::endl;
 }
 
 void FragTrap::vaultHunterDotExe(std::string const &target) {
