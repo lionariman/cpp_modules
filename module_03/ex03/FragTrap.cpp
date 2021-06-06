@@ -1,6 +1,8 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+	this->name = name;
+
 	const int length(3);
 	std::string msgs[length] = {
 		" was created from scrap metal",

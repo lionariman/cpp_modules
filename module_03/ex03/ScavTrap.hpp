@@ -13,13 +13,13 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 
 		// copy constructor
-		ScavTrap(const ScavTrap &scavTrapInstance);
+		ScavTrap(const ScavTrap &fragTrapInstance);
 
 		// destructor
 		~ScavTrap();
 
 		// an assignation operator overload
-		ScavTrap & operator = (const ScavTrap &scavTrapInstance);
+		ScavTrap & operator = (const ScavTrap &fragTrapInstance);
 
 		// newscomer
 		void challengeNewscomer();

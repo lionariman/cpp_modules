@@ -98,14 +98,12 @@ void	replacing(Replace &replacer)
 	while (inputFile.get(ch))
 		line += ch;
 	found = line.find(replacer.getS1());
-	if (found == line.npos)
-		return ;
 	while (true)
 	{
 		if (found == line.npos)
 			break ;
 		line.replace(found, replacer.getS1().length(), replacer.getS2());
-		found = line.find(replacer.getS1(), found + replacer.getS2().length());
+		found = line.find(replacer.getS2().length());
 	}
 	outputFile << line;
 	createFile.close();

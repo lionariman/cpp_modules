@@ -77,9 +77,9 @@ void ClapTrap::takeDamage(unsigned int amount) {
 
 void ClapTrap::beRepaired(unsigned int amount) {
 	this->hitPoints += amount;
-	if (this->hitPoints > this->maxEnergyPoints) {
+	if (this->hitPoints > this->maxHitPoints) {
 		amount -= this->hitPoints - this->maxHitPoints;
-		this->hitPoints = this->maxEnergyPoints;
+		this->hitPoints = this->maxHitPoints;
 	}
 	std::cout << GREEN << this->name + " is repaired for "
 	<< amount << " hit points" << GREEN << std::endl;

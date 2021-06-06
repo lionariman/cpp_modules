@@ -4,45 +4,17 @@ FragTrap::FragTrap() {}
 
 FragTrap::FragTrap(std::string name) {
 	this->name = name;
-
-	const int length(3);
-	std::string msgs[length] = {
-		" was created from scrap metal",
-		" was assembled at the factory",
-		" was created by the leader of the machines"
-	};
-
-	int index = std::rand() % length;
-
-	std::cout << BLUE << this->name << msgs[index] << BLUE << std::endl;
 	this->setDefaultValues();
+	std::cout << BLUE << this->name << " assembled on the factory" << BLUE << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &fragTrapInstance) {
-	const int length(3);
-	std::string msgs[length] = {
-		" was created from scrap metal",
-		" was assembled at the factory",
-		" was created by the leader of the machines"
-	};
-
-	int index = std::rand() % length;
-
-	std::cout << BLUE << this->name << msgs[index] << BLUE << std::endl;
 	*this = fragTrapInstance;
+	std::cout << BLUE << this->name << " assembled on the factory" << BLUE << std::endl;
 }
 
 FragTrap::~FragTrap() {
-	const int length(3);
-	std::string msgs[length] = {
-		" was stricken with rust",
-		" had a system failure",
-		" was crushed by a meteorite"
-	};
-
-	int index = std::rand() % length;
-
-	std::cout << RED << this->name << msgs[index] << RED << std::endl;
+	std::cout << RED << this->name + "was stricken with rust" << RED << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &fragTrapInstance) {
@@ -50,7 +22,6 @@ FragTrap &FragTrap::operator=(const FragTrap &fragTrapInstance) {
 	return *this;
 }
 
-// set default parameter for each field exept name
 void FragTrap::setDefaultValues(void) {
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
@@ -62,7 +33,6 @@ void FragTrap::setDefaultValues(void) {
 	this->armorDamageReduction = 5;
 }
 
-// ========================= getters ===========================
 std::string FragTrap::getName(void) {
 	return this->name;
 }
@@ -74,13 +44,10 @@ int FragTrap::getHitPoints(void) {
 int FragTrap::getEnergyPoints(void) {
 	return this->energyPoints;
 }
-// ========================= getters ===========================
 
-// ========================= setters ===========================
 void FragTrap::setName(std::string value) {
 	this->name = value;
 }
-// ========================= setters ===========================
 
 void FragTrap::rangedAttack(std::string const &target) {
 	std::cout << CYAN << "FR4G-TP " + this->name + " attacks " +

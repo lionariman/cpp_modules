@@ -35,10 +35,10 @@ class ClapTrap
 		virtual ~ClapTrap();
 
 		// an assignation operator overload
-		ClapTrap & operator = (const ClapTrap &fragTrapInstance);
+		virtual ClapTrap & operator = (const ClapTrap &fragTrapInstance);
 
 		// set default parameter for each field exept name
-		void setDefaultValues();
+		virtual void setDefaultValues();
 
 		// ========= getters =========
 		std::string getName(void);

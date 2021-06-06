@@ -21,48 +21,25 @@ class FragTrap
 		int meleeAttackDamage;
 		int rangedAttackDamage;
 		int armorDamageReduction;
-		// default constructor
 		FragTrap();
 
 	public:
-		// constructor with name parameter
 		FragTrap(std::string name);
-
-		// copy constructor
 		FragTrap(const FragTrap &fragTrapInstance);
-
-		// destructor
 		~FragTrap();
-
-		// an assignation operator overload
 		FragTrap & operator = (const FragTrap &fragTrapInstance);
-
-		// set default parameter for each field exept name
 		void setDefaultValues();
 
-		// ========= getters =========
 		std::string getName(void);
 		int getHitPoints(void);
-		// int getMaxHitPoints(void);
 		int getEnergyPoints(void);
-		// int getMaxEnergyPoints(void);
-		// int getLevel(void);
-		// int getMeleeAttackDamage(void);
-		// int getRangedAttackDamage(void);
-		// int getArmorDamageReduction(void);
-		// ========= getters =========
 
-		// ========= setters =========
 		void setName(std::string value);
-		// ========= setters =========
 
-		// default functions from subject
-		void rangedAttack(std::string const &target); // дальняя атака
-		void meleeAttack(std::string const &target); // ближняя атака
-		void takeDamage(unsigned int amount); // получение урона
-		void beRepaired(unsigned int amount); // восстановление очков жизни
-
-		// vault hunter
+		void rangedAttack(std::string const &target);
+		void meleeAttack(std::string const &target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 		void vaultHunterDotExe(std::string const &target);
 };
 

@@ -16,7 +16,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	this->setDefaultValues();
 }
 
-ScavTrap::ScavTrap(const ScavTrap &scavTrapInstance) {
+ScavTrap::ScavTrap(const ScavTrap &fragTrapInstance) {
 	const int length(3);
 	std::string msgs[length] = {
 		" was just born",
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(const ScavTrap &scavTrapInstance) {
 	int index = std::rand() % length;
 
 	std::cout << BLUE << this->name << msgs[index] << BLUE << std::endl;
-	*this = scavTrapInstance;
+	*this = fragTrapInstance;
 }
 
 ScavTrap::~ScavTrap() {
@@ -43,8 +43,8 @@ ScavTrap::~ScavTrap() {
 	std::cout << RED << this->name << msgs[index] << RED << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &scavTrapInstance) {
-	*this = scavTrapInstance;
+ScavTrap &ScavTrap::operator=(const ScavTrap &fragTrapInstance) {
+	*this = fragTrapInstance;
 	return *this;
 }
 

@@ -1,6 +1,10 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap() {}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+	this->name = name;
+
 	const int length(3);
 	std::string msgs[length] = {
 		" was created from scrap metal",
@@ -66,6 +70,13 @@ void FragTrap::vaultHunterDotExe(std::string const &target) {
 		if (this->energyPoints < 0)
 			this->energyPoints = 0;
 	}
+	else if (this->energyPoints > 0 && this->energyPoints < 25) {
+		std::cout << GREEN << this->name + ": " + typeOfAttacks[randAttack] +
+		" for " + target << GREEN << std::endl;
+		this->energyPoints -= 25;
+		if (this->energyPoints < 0)
+			this->energyPoints = 0;
+	}
 	else
-		std::cout << PINK << this->name + " is out of energy" << PINK << std::endl;
+		std::cout << PINK << this->name + " is out of energy 1" << PINK << std::endl;
 }

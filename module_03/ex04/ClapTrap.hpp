@@ -1,9 +1,11 @@
 #ifndef CPP_CLAP_TRAP_HPP
 # define CPP_CLAP_TRAP_HPP
 
+# define NCLR "\x1b[0m"
 # define PINK "\x1b[35m"
 # define BLUE "\x1b[34m"
 # define GREEN "\x1b[32m"
+# define BROWN "\x1b[33m"
 # define CYAN "\x1b[36m"
 # define RED "\x1b[31m"
 
@@ -35,10 +37,10 @@ class ClapTrap
 		virtual ~ClapTrap();
 
 		// an assignation operator overload
-		ClapTrap & operator = (const ClapTrap &fragTrapInstance);
+		virtual ClapTrap & operator = (const ClapTrap &fragTrapInstance);
 
 		// set default parameter for each field exept name
-		void setDefaultValues();
+		virtual void setDefaultValues();
 
 		// ========= getters =========
 		std::string getName(void);
