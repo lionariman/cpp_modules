@@ -8,8 +8,16 @@ ClapTrap::ClapTrap(std::string name) {
 	this->setDefaultValues();
 }
 
-ClapTrap::ClapTrap(const ClapTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+ClapTrap::ClapTrap(const ClapTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	std::cout << CYAN << this->name + " was called" << CYAN << std::endl;
 }
 
@@ -17,8 +25,16 @@ ClapTrap::~ClapTrap() {
 	std::cout << PINK << this->name + " was dismantled" << PINK << std::endl;
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	return *this;
 }
 

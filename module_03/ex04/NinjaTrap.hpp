@@ -16,13 +16,13 @@ class NinjaTrap : virtual public ClapTrap
 		NinjaTrap(std::string name);
 
 		// a copy constructor
-		NinjaTrap(const NinjaTrap &ninjaTrapInstance);
+		NinjaTrap(const NinjaTrap &other);
 
 		// destructor
 		~NinjaTrap();
 
 		// an assignation operator overload
-		NinjaTrap & operator = (const NinjaTrap &ninjaTrapInstance);
+		NinjaTrap & operator = (const NinjaTrap &other);
 
 		// set default values
 		virtual void setDefaultValues();

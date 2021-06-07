@@ -13,13 +13,13 @@ class FragTrap : public ClapTrap
 		FragTrap(std::string name);
 
 		// copy constructor
-		FragTrap(const FragTrap &fragTrapInstance);
+		FragTrap(const FragTrap &other);
 
 		// destructor
 		~FragTrap();
 
 		// an assignation operator overload
-		FragTrap & operator = (const FragTrap &fragTrapInstance);
+		FragTrap & operator = (const FragTrap &other);
 
 		// vault hunter
 		void vaultHunterDotExe(std::string const &target);

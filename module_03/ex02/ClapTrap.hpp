@@ -29,13 +29,13 @@ class ClapTrap
 		ClapTrap(std::string name);
 
 		// copy constructor
-		ClapTrap(const ClapTrap &fragTrapInstance);
+		ClapTrap(const ClapTrap &clapTrapInstance);
 
 		// destructor
 		virtual ~ClapTrap();
 
 		// an assignation operator overload
-		ClapTrap & operator = (const ClapTrap &fragTrapInstance);
+		ClapTrap & operator = (const ClapTrap &clapTrapInstance);
 
 		// set default parameter for each field exept name
 		void setDefaultValues();

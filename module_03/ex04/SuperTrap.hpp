@@ -11,9 +11,9 @@ class SuperTrap : public FragTrap, public NinjaTrap
 
 	public:
 		SuperTrap(std::string name);
-		SuperTrap(const SuperTrap &superTrapInstance);
+		SuperTrap(const SuperTrap &other);
 		~SuperTrap();
-		SuperTrap & operator = (const SuperTrap & superTrapInstance);
+		SuperTrap & operator = (const SuperTrap & other);
 		void setDefaultValues(void);
 		void printValues(void);
 };

@@ -29,13 +29,13 @@ class ScavTrap
 		ScavTrap(std::string name);
 
 		// copy constructor
-		ScavTrap(const ScavTrap &fragTrapInstance);
+		ScavTrap(const ScavTrap &scavTrapInstance);
 
 		// destructor
 		~ScavTrap();
 
 		// an assignation operator overload
-		ScavTrap & operator = (const ScavTrap &fragTrapInstance);
+		ScavTrap & operator = (const ScavTrap &scavTrapInstance);
 
 		// set default parameter for each field exept name
 		void setDefaultValues();

@@ -8,8 +8,16 @@ NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name) {
 	this->setDefaultValues();
 }
 
-NinjaTrap::NinjaTrap(const NinjaTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+NinjaTrap::NinjaTrap(const NinjaTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	std::cout << BLUE << this->name + " was born in konoha" << BLUE << std::endl;
 }
 
@@ -17,8 +25,16 @@ NinjaTrap::~NinjaTrap() {
 	std::cout << RED << this->name + " was defeated by a deadly ninjutsu"  << RED << std::endl;
 }
 
-NinjaTrap &NinjaTrap::operator=(const NinjaTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+NinjaTrap &NinjaTrap::operator=(const NinjaTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	return *this;
 }
 

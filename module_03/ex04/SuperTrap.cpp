@@ -9,19 +9,33 @@ SuperTrap::SuperTrap(std::string name) : ClapTrap(name), FragTrap(name), NinjaTr
     std::cout << BROWN <<this->name + " have been rise" << BROWN << std::endl;
 }
 
-SuperTrap::SuperTrap(const SuperTrap &superTrapInstance) {
+SuperTrap::SuperTrap(const SuperTrap &other) {
+    this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
     std::cout << BROWN << "Copy constructor called" << BROWN << std::endl;
-    this->setDefaultValues();
-    *this = superTrapInstance;
 }
 
 SuperTrap::~SuperTrap() {
     std::cout << BROWN << this->name + " was fallen" << BROWN << std::endl;
 }
 
-SuperTrap & SuperTrap::operator=(const SuperTrap &superTrapInstance) {
-    this->setDefaultValues();
-    *this = superTrapInstance;
+SuperTrap & SuperTrap::operator=(const SuperTrap &other) {
+    this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
     return *this;
 }
 

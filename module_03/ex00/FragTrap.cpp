@@ -9,7 +9,15 @@ FragTrap::FragTrap(std::string name) {
 }
 
 FragTrap::FragTrap(const FragTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+	this->name = fragTrapInstance.name;
+	this->hitPoints = fragTrapInstance.hitPoints;
+	this->maxHitPoints = fragTrapInstance.maxHitPoints;
+	this->energyPoints = fragTrapInstance.energyPoints;
+	this->maxEnergyPoints = fragTrapInstance.maxEnergyPoints;
+	this->level = fragTrapInstance.level;
+	this->meleeAttackDamage = fragTrapInstance.meleeAttackDamage;
+	this->rangedAttackDamage = fragTrapInstance.rangedAttackDamage;
+	this->armorDamageReduction = fragTrapInstance.armorDamageReduction;
 	std::cout << BLUE << this->name << " assembled on the factory" << BLUE << std::endl;
 }
 
@@ -18,7 +26,15 @@ FragTrap::~FragTrap() {
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+	this->name = fragTrapInstance.name;
+	this->hitPoints = fragTrapInstance.hitPoints;
+	this->maxHitPoints = fragTrapInstance.maxHitPoints;
+	this->energyPoints = fragTrapInstance.energyPoints;
+	this->maxEnergyPoints = fragTrapInstance.maxEnergyPoints;
+	this->level = fragTrapInstance.level;
+	this->meleeAttackDamage = fragTrapInstance.meleeAttackDamage;
+	this->rangedAttackDamage = fragTrapInstance.rangedAttackDamage;
+	this->armorDamageReduction = fragTrapInstance.armorDamageReduction;
 	return *this;
 }
 

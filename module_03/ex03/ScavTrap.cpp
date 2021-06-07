@@ -16,7 +16,16 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	this->setDefaultValues();
 }
 
-ScavTrap::ScavTrap(const ScavTrap &fragTrapInstance) {
+ScavTrap::ScavTrap(const ScavTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	const int length(3);
 	std::string msgs[length] = {
 		" was just born",
@@ -27,7 +36,6 @@ ScavTrap::ScavTrap(const ScavTrap &fragTrapInstance) {
 	int index = std::rand() % length;
 
 	std::cout << BLUE << this->name << msgs[index] << BLUE << std::endl;
-	*this = fragTrapInstance;
 }
 
 ScavTrap::~ScavTrap() {
@@ -43,8 +51,16 @@ ScavTrap::~ScavTrap() {
 	std::cout << RED << this->name << msgs[index] << RED << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	return *this;
 }
 

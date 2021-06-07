@@ -18,7 +18,16 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 	this->setDefaultValues();
 }
 
-FragTrap::FragTrap(const FragTrap &fragTrapInstance) {
+FragTrap::FragTrap(const FragTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	const int length(3);
 	std::string msgs[length] = {
 		" was created from scrap metal",
@@ -29,7 +38,6 @@ FragTrap::FragTrap(const FragTrap &fragTrapInstance) {
 	int index = std::rand() % length;
 
 	std::cout << BLUE << this->name << msgs[index] << BLUE << std::endl;
-	*this = fragTrapInstance;
 }
 
 FragTrap::~FragTrap() {
@@ -45,8 +53,16 @@ FragTrap::~FragTrap() {
 	std::cout << RED << this->name << msgs[index] << RED << std::endl;
 }
 
-FragTrap &FragTrap::operator=(const FragTrap &fragTrapInstance) {
-	*this = fragTrapInstance;
+FragTrap &FragTrap::operator=(const FragTrap &other) {
+	this->name = other.name;
+	this->hitPoints = other.hitPoints;
+	this->maxHitPoints = other.maxHitPoints;
+	this->energyPoints = other.energyPoints;
+	this->maxEnergyPoints = other.maxEnergyPoints;
+	this->level = other.level;
+	this->meleeAttackDamage = other.meleeAttackDamage;
+	this->rangedAttackDamage = other.rangedAttackDamage;
+	this->armorDamageReduction = other.armorDamageReduction;
 	return *this;
 }
 
