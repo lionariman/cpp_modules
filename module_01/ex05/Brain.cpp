@@ -28,11 +28,11 @@ std::string	Brain::identify(void)
 	return "0x" + address;
 }
 
-std::string	Brain::identify(void)
-{
-	std::stringstream address;
+// std::string	Brain::identify(void)
+// {
+// 	std::stringstream address;
 
-	address << this;
-	std::string str = address.str();
-	return (str);
-}
+// 	address << this;
+// 	std::string str = address.str();
+// 	return (str);
+// }

@@ -8,12 +8,12 @@ SRCS =	PhoneBook.cpp utils.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 .cpp.o:
-	$(CC) $(FL) -o $@ -c $^
+	$(CC) $(FL) -o $@ -cpp $^
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(FL) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)

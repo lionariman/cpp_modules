@@ -5,9 +5,7 @@ Enemy::Enemy() {}
 Enemy::Enemy(int hp, const std::string & type) :
     _hp(hp), _type(type) {}
 
-Enemy::~Enemy() {
-    std::cout << this->_type + " was defeated" << std::endl;
-}
+Enemy::~Enemy() {}
 
 Enemy::Enemy(const Enemy & other) {
     this->_hp = other._hp;

@@ -12,7 +12,7 @@ class Enemy
 
     public:
         Enemy(int hp, const std::string & type);
-        ~Enemy();
+        virtual ~Enemy();
         Enemy(const Enemy & other);
         Enemy & operator=(const Enemy & other);
 

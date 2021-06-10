@@ -7,7 +7,7 @@
 int main(void)
 {
 	Character* me = new Character("me");
-
+	
 	std::cout << *me;
 
 	Enemy* b = new RadScorpion();
@@ -20,13 +20,13 @@ int main(void)
 	me->equip(pf);
 
 	me->attack(b);
-	// std::cout << *me;
-	// me->equip(pr);
-	// std::cout << *me;
-	// me->attack(b);
-	// std::cout << *me;
-	// me->attack(b);
-	// std::cout << *me;
+	std::cout << *me;
+	me->equip(pr);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
+	me->attack(b);
+	std::cout << *me;
 
-	return (0);
+	return 0;
 }

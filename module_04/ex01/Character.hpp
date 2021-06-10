@@ -11,6 +11,7 @@ class Character
         std::string _name;
         AWeapon * _weapon;
         int _numAP;
+        int checkDeath;
 
     public:
         Character(const std::string & name);

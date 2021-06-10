@@ -22,5 +22,5 @@ RadScorpion & RadScorpion::operator=(const RadScorpion & other) {
 }
 
 void RadScorpion::takeDamage(int amount) {
-    std::cout << this->_type + " takes " << amount << " damage" << std::endl;
+    this->_hp -= this->_hp <= 0 ? 0 : amount;
 }

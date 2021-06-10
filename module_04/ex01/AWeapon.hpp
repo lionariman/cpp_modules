@@ -22,7 +22,7 @@ class AWeapon
 
 	public:
 		AWeapon(const std::string & name, int apcost, int damage);
-		~AWeapon();
+		virtual ~AWeapon();
 		AWeapon(const AWeapon & other);
 		AWeapon & operator = (const AWeapon & other);
 

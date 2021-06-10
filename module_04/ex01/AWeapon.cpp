@@ -7,9 +7,7 @@ AWeapon::AWeapon(const std::string & name, int apcost, int damage) :
 	_apcost(apcost),
 	_damage(damage) {}
 
-AWeapon::~AWeapon() {
-	std::cout << this->_name + " is destroyed" << std::endl;
-}
+AWeapon::~AWeapon() {}
 
 AWeapon::AWeapon(const AWeapon & other) {
 	this->_name = other._name;
