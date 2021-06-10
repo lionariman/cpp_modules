@@ -11,7 +11,6 @@ class Character
         std::string _name;
         AWeapon * _weapon;
         int _numAP;
-        int checkDeath;
 
     public:
         Character(const std::string & name);
@@ -21,7 +20,7 @@ class Character
 
         void recoverAP();
         void equip(AWeapon * weapon);
-        void attack(Enemy * enemy);
+        void attack(Enemy *&enemy);
         const std::string & getName() const;
 
         AWeapon * getWeapon() const;
