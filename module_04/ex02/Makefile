@@ -23,13 +23,9 @@ WHITE       = \033[1;37m
 compile = clang++ -Wall -Wextra -Werror
 
 sources = main.cpp \
-		  AWeapon.cpp \
-		  PlasmaRifle.cpp \
-		  PowerFist.cpp \
-		  Enemy.cpp \
-		  SuperMutant.cpp \
-		  RadScorpion.cpp \
-		  Character.cpp
+		  Squad.cpp \
+		  TacticalMarine.cpp \
+		  AssaultTerminator.cpp
 
 objects = $(sources:.cpp=.o)
 
@@ -40,6 +36,10 @@ objects = $(sources:.cpp=.o)
 all: $(objects)
 	@ $(compile) $(sources)
 	@ echo "$(GREEN)[<==> SUCCESS <==>]$(NCLR)"
+
+debug: $(objects)
+	@ $(compile) -g $(sources)
+	@ echo "$(GREEN)[<==> READY TO DEBUG <==>]$(NCLR)"
 
 clean:
 	@ rm -f $(objects)
