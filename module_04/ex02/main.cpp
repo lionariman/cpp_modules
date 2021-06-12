@@ -18,13 +18,14 @@ void main1(void) {
 	vlc->push(bill);
 	vlc->push(jo);
 
+	std::cout << vlc->getCount() << std::endl;
+
 	for (int i(0); i < vlc->getCount(); ++i)
 	{
 		ISpaceMarine *cur = vlc->getUnit(i);
 		cur->battleCry();
 		cur->rangedAttack();
 		cur->meleeAtaack();
-		// std::cout << "x" << std::endl;
 	}
 	delete vlc;
 }
