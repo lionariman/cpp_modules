@@ -4,7 +4,7 @@
 #include "RadScorpion.hpp"
 #include "Character.hpp"
 
-int main(void)
+void foo(void)
 {
 	Character* me = new Character("me");
 	
@@ -28,5 +28,16 @@ int main(void)
 	me->attack(b);
 	std::cout << *me;
 
-	return 0;
+	delete me;
+	delete b;
+	delete pr;
+	delete pf;
+}
+
+int main(void)
+{
+	foo();
+	while (1);
+
+	return (0);
 }

@@ -5,7 +5,7 @@
 #include "Squad.hpp"
 
 
-void main1(void) {
+void foo(void) {
 	ISpaceMarine *bob = new TacticalMarine;
 	ISpaceMarine *jim = new AssaultTerminator;
 	ISpaceMarine *bill = new TacticalMarine;
@@ -31,7 +31,8 @@ void main1(void) {
 }
 
 int main(void) {
-	main1();
-	// while(1);
+	foo();
+	while(1);
+	
 	return (0);
 }
