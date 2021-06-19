@@ -3,6 +3,10 @@
 
 # include <iostream>
 
+class Bureaucrat;
+
+# include "Form.hpp"
+
 # define RED "\x1B[31m"
 # define GREEN "\x1B[32m"
 # define ENDC "\x1B[0m"
@@ -39,6 +43,8 @@ public:
     {
         const char *what() const throw();
     };
+
+    void signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
