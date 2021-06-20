@@ -5,7 +5,6 @@
 
 class Converter
 {
-private:
 public:
     Converter();
     ~Converter();
@@ -14,10 +13,15 @@ public:
 
     class ConverterWrongArgNum : public std::exception {
         const char *what() const throw();
-    }
+    };
 
-    void type(std::string const &typeName);
     void throwError() const;
+
+    void valueTypeChecking(std::string const &value);
+    void parseTypeChar(std::string const &value);
+    void parseTypeInt(std::string const &value);
+    void parseTypeFloat(std::string const &value);
+    void parseTypeDouble(std::string const &value);
 };
 
 #endif

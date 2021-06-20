@@ -5,17 +5,14 @@ void convert(int ac, char **av)
 
     Converter *conv new Converter();
 
-    try
-    {
+    try {
         if (ac != 2)
             conv->throwError();
     }
-    catch (Converter::ConverterWrongArgNum &e)
-    {
+    catch (Converter::ConverterWrongArgNum &e) {
         std::cout << "* error was called *" << std::endl;
     }
-    catch (std::exception const &e)
-    {
+    catch (std::exception const &e) {
         std::cout << e.what() << std::endl;
     }
 
@@ -25,8 +22,5 @@ void convert(int ac, char **av)
 int main(int ac, char **av)
 {
     convert(ac, av);
-
-    // while (1);
-
     return (0);
 }
