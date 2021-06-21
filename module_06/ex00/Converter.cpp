@@ -27,10 +27,40 @@ Converter &Converter::operator=(Converter const &other) {
 void Converter::castToTypeChar() {
     std::cout << "Char: ";
     try {
-        
+
     }
     catch (std::exception &e) {
         std::cout << "impossible" << std::endl;
+    }
+}
+
+const char *Converter::ConverterNoSuchTypeException::what() const throw() {
+    return "Converter exception: there is no such type";
+}
+
+void Converter::whatTypeOfLiteral() {
+    try
+    {
+        if (_av.length() == 1 && std::isalnum(_av[0]))
+        {
+            _typeChar = static_cast<char>(_av[0]);
+            return ;
+        }
+        else if (std::stoi(_av) > 0 && std::stoi(_av) < 127)
+        {
+            _typeChar = static_cast<char>(std::stoi(_av));
+            return ;
+        }
+        else
+            throw ConverterNoSuchTypeException();
+    }
+    catch(ConverterNoSuchTypeException &e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
     }
 }
 
