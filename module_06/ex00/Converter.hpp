@@ -5,23 +5,26 @@
 
 class Converter
 {
-public:
+private:
     Converter();
+    std::string _av;
+    char _typeChar;
+    int _typeInt;
+    float _typeFloat;
+    double _typeDouble;
+
+public:
+    Converter(std::string av);
     ~Converter();
     Converter(Converter const &other);
     Converter &operator=(Converter const &other);
 
-    class ConverterWrongArgNum : public std::exception {
-        const char *what() const throw();
-    };
+    void castToTypeChar();
+    // void castToTypeInt();
+    // void castToTypeFloat();
+    // void castToTypeDouble();
 
-    void throwError() const;
-
-    void valueTypeChecking(std::string const &value);
-    void parseTypeChar(std::string const &value);
-    void parseTypeInt(std::string const &value);
-    void parseTypeFloat(std::string const &value);
-    void parseTypeDouble(std::string const &value);
+    void makeIt();
 };
 
 #endif

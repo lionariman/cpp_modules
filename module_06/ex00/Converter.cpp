@@ -1,46 +1,51 @@
 #include "Converter.hpp"
 
-Converter::Converter() {
-    std::cout << "* Converter is created *\n" << std::endl;
-}
+Converter::Converter(std::string av) :
+    _av(av),
+    _typeChar(0),
+    _typeInt(0),
+    _typeFloat(0),
+    _typeDouble(0) {}
 
-Converter::~Converter() {
-    std::cout << "* Converter has been closed *\n" << std::endl;
-}
+Converter::~Converter() {}
 
 Converter::Converter(Converter const &other) {
-    (void)other;
+    *this = other;
 }
 
 Converter &Converter::operator=(Converter const &other) {
-    (void)other;
+    if (this == &other)
+        return *this;
+    _av = other._av;
+    _typeChar = other._typeChar;
+    _typeInt = other._typeInt;
+    _typeFloat = other._typeFloat;
+    _typeDouble = other._typeDouble;
     return *this;
 }
 
-const char *Converter::ConverterWrongArgNum::what() const throw() {
-    return "Converter exception: wrong number of arguments";
+void Converter::castToTypeChar() {
+    std::cout << "Char: ";
+    try {
+        
+    }
+    catch (std::exception &e) {
+        std::cout << "impossible" << std::endl;
+    }
 }
 
-void Converter::throwError() const {
-    throw ConverterWrongArgNum();
-}
+// void Converter::castToTypeInt() {
 
-void Converter::valueTypeChecking(std::string const &value) {
+// }
 
-}
+// void Converter::castToTypeFloat() {
 
-void Converter::parseTypeChar(std::string const &value) {
+// }
 
-}
+// void Converter::castToTypeDouble() {
 
-void Converter::parseTypeInt(std::string const &value) {
+// }
 
-}
-
-void Converter::parseTypeFloat(std::string const &value) {
-
-}
-
-void Converter::parseTypeDouble(std::string const &value) {
-
+void Converter::makeIt() {
+    std::cout << " HELLO " << std::endl;
 }
