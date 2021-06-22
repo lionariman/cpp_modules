@@ -12,15 +12,15 @@ struct Data
 
 class Serialization
 {
+protected:
+    std::string getRandStr();
+    int getRandInt();
+
 public:
     Serialization();
     ~Serialization();
     Serialization(Serialization const &other);
     Serialization &operator=(Serialization const &other);
-
-
-    std::string getRandStr();
-    int getRandInt();
 
     void *serialize();
     Data *deserialize(void *raw);
