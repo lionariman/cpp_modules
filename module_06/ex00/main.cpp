@@ -16,7 +16,7 @@ int foo(int ac, char **av)
     {
         std::cerr << "Exception (main): " << e.what() << '\n';
     }
-    
+
     return 0;
 }
 
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 {
     foo(ac, av);
 
-    while (1);
+    // while (1);
 
     return (0);
 }

@@ -82,8 +82,8 @@ void Converter::makeFloat() {
         else
             throw std::invalid_argument("Argument error");
 
-        if (_av == "nan" || _av == "inf" || _av == "+inf" || _av == "-inf" ||
-            _av.substr(0, 3) == "nan" || _av.substr(0, 3) == "inf" ||
+        if (_av.substr(0, 3) == "nan" || _av.substr(0, 3) == "inf" ||
+            _av.substr(0, 4) == "-nan" || _av.substr(0, 4) == "+nan" ||
             _av.substr(0, 4) == "+inf" || _av.substr(0, 4) == "-inf")
             std::cout << _typeFloat << "f" << std::endl;
         else
@@ -119,8 +119,8 @@ void Converter::makeDouble() {
         else
             throw std::invalid_argument("Argument error");
 
-        if (_av == "nan" || _av == "inf" || _av == "+inf" || _av == "-inf" ||
-            _av.substr(0, 3) == "nan" || _av.substr(0, 3) == "inf" ||
+        if (_av.substr(0, 3) == "nan" || _av.substr(0, 3) == "inf" ||
+            _av.substr(0, 4) == "-nan" || _av.substr(0, 4) == "+nan" ||
             _av.substr(0, 4) == "+inf" || _av.substr(0, 4) == "-inf")
             std::cout << _typeFloat << std::endl;
         else
