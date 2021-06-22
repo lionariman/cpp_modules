@@ -14,5 +14,8 @@ int main(void)
     std::cout << "NUM  : " << deserialized->number << std::endl;
     std::cout << "STR 2: " + deserialized->str2 << std::endl;
 
+    delete static_cast<char *>(serialized);
+    delete deserialized;
+
     return 0;
 }
