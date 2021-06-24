@@ -3,12 +3,12 @@
 
 # include <iostream>
 
-template<class T1, class T2, class T3>
-void iter(T1 &buf, T2 bufLength, T3 (&func)(T3 i))
+template<typename T>
+void iter(T *buf, int len, void (func)(T const &x))
 {
-    for (int i(0); i < bufLength; i++)
+    for (int i(0); i < len; i++)
     {
-        buf[i] = func(buf[i]);
+        func(buf[i]);
     }
 }
 

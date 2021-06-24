@@ -15,19 +15,13 @@ void swap(T &a, T &b)
 template <class T>
 T min(T a, T b)
 {
-    T x;
-
-    x = ((a >= b) ? b : a);
-    return x;
+    return ((a >= b) ? b : a);
 }
 
 template <class T>
 T max(T a, T b)
 {
-    T x;
-
-    x = ((a <= b) ? b : a);
-    return x;
+    return ((a <= b) ? b : a);
 }
 
 #endif

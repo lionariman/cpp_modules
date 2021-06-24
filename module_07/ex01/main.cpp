@@ -1,39 +1,19 @@
 #include "iter.hpp"
+#include "Awesome.hpp"
 
-int newNumbers(int i)
+void testInt()
 {
-    return i * 2;    
-}
-
-std::string newStrings(std::string line)
-{
-    return line + " says hello!";
-}
-
-char newChars(char c)
-{
-    return c + 1;
-}
-
-float newFloat(float i)
-{
-    return i / 10;
-}
-
-void withInt()
-{
+    std::cout << "<============= INT ================>" << std::endl;
     int nums[4] = {
         1, 2, 3, 4
     };
     
-    std::cout << "<============= INT ================>" << std::endl;
-    iter(nums, 4, newNumbers);
-    for (int i(0); i < 4; i++)
-        std::cout << nums[i] << std::endl;
+    iter(nums, 4, print);
 }
 
-void withString()
+void testString()
 {
+    std::cout << "<============ STRING ==============>" << std::endl;
     std::string names[4] = {
         "James",
         "Linda",
@@ -41,14 +21,12 @@ void withString()
         "Garett"
     };
 
-    std::cout << "<============ STRING ==============>" << std::endl;
-    iter(names, 4, newStrings);
-    for (int i(0); i < 4; i++)
-        std::cout << names[i] << std::endl;
+    iter(names, 4, print);
 }
 
-void withChar()
+void testChar()
 {
+    std::cout << "<============= Char ===============>" << std::endl;
     char alf[4] = {
         'a',
         'b',
@@ -56,30 +34,37 @@ void withChar()
         'd'
     };
 
-    std::cout << "<============= Char ===============>" << std::endl;
-    iter(alf, 4, newChars);
-    for (int i(0); i < 4; i++)
-        std::cout << alf[i] << std::endl;
+    iter(alf, 4, print);
 }
 
-void withFloat()
+void testFloat()
 {
+    std::cout << "<============ FLOAT ===============>" << std::endl;
     float fnums[4] = {
         10000.0, 1000.0, 100.0, 10.0
     };
 
-    std::cout << "<============ FLOAT ===============>" << std::endl;
-    iter(fnums, 4, newFloat);
-    for (int i(0); i < 4; i++)
-        std::cout << fnums[i] << std::endl;
+    iter(fnums, 4, print);
+}
+
+void testAwesome()
+{
+    std::cout << "<============ AWESOME =============>" << std::endl;
+    int tab[] = { 0, 1, 2, 3, 4 };
+
+    Awesome tab2[5];
+
+    iter(tab, 5, print);
+    iter(tab2, 5, print);
 }
 
 int main(void)
 {
-    withInt();
-    withString();
-    withChar();
-    withFloat();
+    testInt();
+    testString();
+    testChar();
+    testFloat();
+    testAwesome();
 
     return 0;
 }
