@@ -71,13 +71,13 @@ void testIntBuf()
 
         array1 = array2;
 
-        for (int i(0); i < bufSize1; i++)
+        for (int i(0); i < bufSize2; i++)
             std::cout << array1[i] << ", ";
         std::cout << std::endl;
 
         std::cout << PURPLE << "\n... Corresponding to out of range ..." << NCLR << std::endl;
 
-        std::cout << array1[bufSize1 + 1] << std::endl;
+        std::cout << array1[bufSize2 + 1] << std::endl;
 
     }
     catch(const std::exception& e)
@@ -123,13 +123,13 @@ void testStringBuf()
 
         array1 = array2;
 
-        for (int i(0); i < bufSize1; i++)
+        for (int i(0); i < bufSize2; i++)
             std::cout << array1[i] << ", ";
         std::cout << std::endl;
 
         std::cout << PURPLE << "\n... Corresponding to out of range ..." << NCLR << std::endl;
 
-        std::cout << array1[bufSize1 + 1] << std::endl;
+        std::cout << array1[bufSize2 + 1] << std::endl;
 
     }
     catch(const std::exception& e)
@@ -174,13 +174,13 @@ void testFloatBuf()
 
         array1 = array2;
 
-        for (int i(0); i < bufSize1; i++)
+        for (int i(0); i < bufSize2; i++)
             std::cout << array1[i] << ", ";
         std::cout << std::endl;
 
         std::cout << PURPLE << "\n... Corresponding to out of range ..." << NCLR << std::endl;
 
-        std::cout << array1[bufSize1 + 1] << std::endl;
+        std::cout << array1[bufSize2 + 1] << std::endl;
 
     }
     catch(const std::exception& e)
