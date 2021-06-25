@@ -28,8 +28,7 @@
 # define B_BLUE      "\033[1;34m"
 # define B_PURPLE    "\033[1;35m"
 
-// template <class T>
-
-// class T::iterator easyfind()
+// template <typename T>
+// typename T::iterator easyfind(T const &x)
 
 #endif
