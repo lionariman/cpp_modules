@@ -65,7 +65,7 @@ public:
         }
     };
 
-    T &operator[](const int index) const {
+    T &operator[](const int index) {
         if (index > -1 && index < (int)_n)
             return _array[index];
         throw ArrIndexOutOfRange();
