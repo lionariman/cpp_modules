@@ -2,6 +2,7 @@
 # define CPP_EASYFIND_HPP
 
 # include <iostream>
+# include <string>
 # include <vector>
 # include <map>
 # include <stack>
@@ -9,6 +10,7 @@
 # include <set>
 # include <array>
 # include <list>
+# include <algorithm>
 
 # define NCLR        "\033[0m"
 # define BLACK       "\033[0;30m"
@@ -28,7 +30,26 @@
 # define B_BLUE      "\033[1;34m"
 # define B_PURPLE    "\033[1;35m"
 
-// template <typename T>
-// typename T::iterator easyfind(T const &x)
+class itemNotFoundException : public std::exception
+{
+    public:
+        const char *what() const throw()
+        {
+            return "Unfortunately we cannot found such element ;((";
+        }
+};
+
+template<typename T>
+typename T::iterator easyfind(T &array, int const item)
+{
+    typename T::iterator it;
+
+    for (it = array.begin(); it != array.end(); it++)
+    {
+        if (*it == item)
+            return it;
+    }
+    throw itemNotFoundException();
+}
 
 #endif

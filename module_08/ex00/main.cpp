@@ -3,26 +3,36 @@
 void test_vector()
 {
     std::vector<int> vec;
+    std::vector<int>::iterator it;
 
     for (int i(0); i < 10; i++)
         vec.push_back(20 - i);
 
     for (int i(0); i < static_cast<int>(vec.size()); i++)
         std::cout << PURPLE << vec[i] << ' ' << NCLR;
-    
+
     std::cout << '\n';
 
+    std::cout << YELLOW << "What element are you looking for? -> " << NCLR;
+
+    int elem;
+    std::cin >> elem;
+
+    it = easyfind(vec, elem);
+    std::cout << YELLOW << "Yes! There is such an element - " << NCLR << *it << std::endl;
+    
     return ;
 }
 
 void test_deque()
 {
     std::deque<int> deq;
+    std::deque<int>::iterator it;
 
     for (int i(0); i < 4; i++)
     {
-        deq.push_back(i); // put a number at the end of the array
-        deq.push_front(10 - i); // put a number at the beginnig of the array
+        deq.push_back(i);
+        deq.push_front(10 - i);
     }
 
     for (int i(0); i < static_cast<int>(deq.size()); i++)
@@ -30,17 +40,26 @@ void test_deque()
 
     std::cout << '\n';
 
+    std::cout << YELLOW << "What element are you looking for? -> " << NCLR;
+
+    int elem;
+    std::cin >> elem;
+
+    it = easyfind(deq, elem);
+    std::cout << YELLOW << "Yes! There is such an element - " << NCLR << *it << std::endl;
+
     return ;
 }
 
 void test_list()
 {
     std::list<int> ls;
+    std::list<int>::iterator it;
 
-    for (int i(0); i < 10; i++)
+    for (int i(0); i < 4; i++)
     {
         ls.push_back(i);
-        ls.push_front(20 - i);
+        ls.push_front(10 - i);
     }
 
     for (std::list<int>::const_iterator iter = ls.begin(); iter != ls.end(); iter++)
@@ -48,40 +67,48 @@ void test_list()
 
     std::cout << '\n';
 
+    std::cout << YELLOW << "What element are you looking for? -> " << NCLR;
+
+    int elem;
+    std::cin >> elem;
+
+    it = easyfind(ls, elem);
+    std::cout << YELLOW << "Yes! There is such an element - " << NCLR << *it << std::endl;
+
     return ;
-}
-
-void test_map()
-{
-    std::map<int, std::string> mp;
-
-    mp.insert(std::make_pair(3, "cat"));
-    mp.insert(std::make_pair(2, "dog"));
-    mp.insert(std::make_pair(5, "chicken"));
-    mp.insert(std::make_pair(1, "lion"));
-    mp.insert(std::make_pair(9, "spider"));
-
-    std::map<int, std::string>::const_iterator iter;
-    iter = mp.begin();
-    while (iter != mp.end())
-    {
-        std::cout << PURPLE << iter->first << " = " << iter->second << NCLR << std::endl;
-        iter++;
-    }
-
-    // std::cout << '\n';
 }
 
 int main(void)
 {
     std::cout << GREEN << " ^^ Vector ^^ " << NCLR << std::endl;
-    test_vector();
+    try
+    {
+        test_vector();
+    }
+    catch(std::exception &e)
+    {
+        std::cout << B_RED << e.what() << NCLR << std::endl;
+    }
+
     std::cout << GREEN << "\n ^^ Deque ^^ " << NCLR << std::endl;
-    test_deque();
+    try
+    {
+        test_deque();
+    }
+    catch(std::exception &e)
+    {
+        std::cout << B_RED << e.what() << NCLR << std::endl;
+    }
+
     std::cout << GREEN << "\n ^^ List ^^ " << NCLR << std::endl;
-    test_list();
-    std::cout << GREEN << "\n ^^ Map ^^ " << NCLR << std::endl;
-    test_map();
+    try
+    {
+        test_list();
+    }
+    catch(std::exception &e)
+    {
+        std::cout << B_RED << e.what() << NCLR << std::endl;
+    }
 
     return 0;
 }
