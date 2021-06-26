@@ -2,7 +2,6 @@
 # define CPP_EASYFIND_HPP
 
 # include <iostream>
-# include <string>
 # include <vector>
 # include <map>
 # include <stack>
@@ -10,7 +9,6 @@
 # include <set>
 # include <array>
 # include <list>
-# include <algorithm>
 
 # define NCLR        "\033[0m"
 # define BLACK       "\033[0;30m"
