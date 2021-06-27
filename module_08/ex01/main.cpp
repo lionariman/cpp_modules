@@ -18,8 +18,8 @@ void foo(void)
     // sp.addNumber(std::rand() % 100);
     // std::cout << GREEN << sp[18] << NCLR << ' ';
 
-    std::cout << YELLOW << "shortest span -> " << sp.shortestSpan() << NCLR << std::endl;
-    std::cout << YELLOW << " longest span -> " << sp.longestSpan() << NCLR << std::endl;
+    std::cout << YELLOW << "shortest span -> " << GREEN << sp.shortestSpan() << NCLR << std::endl;
+    std::cout << YELLOW << " longest span -> " << GREEN << sp.longestSpan() << NCLR << std::endl;
 }
 
 int main(void)
