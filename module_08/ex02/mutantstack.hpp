@@ -31,16 +31,12 @@ private:
     int flag;
 
 public:
-    // MauntStack constructor
     MutantStack() : std::stack<T>(), ibegin(nullptr), iend(nullptr), flag(0) {};
 
-    // MauntStack destructor
     virtual ~MutantStack() {};
 
-    // MauntStack copy constructor
     MutantStack(MutantStack const &other) { *this = other; };
 
-    // MauntStack assignation operator overload
     MutantStack &operator=(MutantStack const &other)
     {
         if (this == &other)
@@ -52,7 +48,6 @@ public:
         return *this;
     };
 
-    // overloaded function from the stack class to push T type values
     virtual void push(T const &object)
     {
         std::stack<T>::push(object);
@@ -66,7 +61,6 @@ public:
             this->iend = &std::stack<T>::top();
     }
 
-    // iterator class is a smart pointer to point to each element of the stack
     class iterator
     {
         private:
@@ -81,18 +75,18 @@ public:
 
             iterator(T const &other) { this->pointer = other.pointer; }
 
-            iterator &operator = (iterator const &other) { this->pointer = other.pointer; }
+            T &operator = (iterator const &other) { this->pointer = other.pointer; }
 
-            iterator &operator ++ ()
+            T &operator ++ ()
             {
                 this->pointer++;
-                return *this;
+                return *this->pointer;
             }
 
-            iterator &operator -- ()
+            T &operator -- ()
             {
                 this->pointer--;
-                return *this;
+                return *this->pointer;
             }
 
             bool operator == (iterator &other)
@@ -131,39 +125,15 @@ public:
             }
     };
 
-     // overloaded function from the stack class to get begin of the stack of T type values
     T *begin()
     {
         return this->ibegin;
     }
 
-    // overloaded function from the stack class to get end of the stack of T type values
     T *end()
     {
         return ++this->iend;
     }
-
-    // T *begin()
-    // {
-    //     typedef typename std::stack<T>::container_type::const_iterator const_iterator;
-    //     return this->c.begin();
-    // }
-
-    // const_iterator end()
-    // {
-    //     return this->c.end();
-    // }
-
-    // typedef typename std::stack<T>container_type::revers_iterator revers_iterator;
-    // revers_iterator rbegin()
-    // {
-    //     return this->c.rbegin();
-    // }
-
-    // revers_iterator rend()
-    // {
-    //     return this->c.rend();
-    // }
 };
 
 // # include "mutantstack.ipp"
