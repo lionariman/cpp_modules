@@ -1,6 +1,6 @@
 # cpp_modules
 
-Learning Object Oriented Programming (OOP) with C++
+### Learning Object Oriented Programming (OOP) with C++
 
 Module00: Introducing to C++
 
@@ -21,10 +21,11 @@ Module07: Templates
 Module08: Iterators
 
 Compile:
-
+```
   clang++ -Wall -Wextra -Werror -std=c++98 *.cpp
+```
 
-# Resources
+## Resources
 1. [Ravesli](https://ravesli.com/uroki-cpp/)
 2. [Simple Code](https://www.youtube.com/playlist?list=PLQOaTSbfxUtCrKs0nicOg2npJQYSPGO9r)
 3. [Лекторий ФПМИ](https://www.youtube.com/c/ЛекторийФПМИ)
