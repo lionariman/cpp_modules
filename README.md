@@ -3,13 +3,21 @@
 Learning Object Oriented Programming (OOP) with C++
 
 Module00: Introducing to C++
+
 Module01: Difference between reference and pointer
+
 Module02: Fixed point number
+
 Module03: Inheritance and encapsulation
+
 Module04: Polymorphism
+
 Module05: Error handling (try and catch use)
+
 Module06: Type casting
+
 Module07: Templates
+
 Module08: Iterators
 
 Compile:
